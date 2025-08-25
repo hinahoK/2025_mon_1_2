@@ -2,11 +2,12 @@
 
 1.dockerのインストール
     Amazon Linux 2 の場合　下記のコマンドを入力：
-        sudo mkdir -p /usr/local/lib/docker/cli-plugins/
-        sudo curl -SL https://github.com/docker/compose/releases/download/v2.36.0/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
-        sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+    sudo yum install -y docker
+    sudo systemctl start docker
+    sudo systemctl enable docker
+
     インストールできたかどうか確認する
-    docker compose version
+    sudo usermod -a -G docker ec2-user
 
 2.作業用ディレクトリを作ってその中に移動（例：dockertest）
     mkdir dockertest
